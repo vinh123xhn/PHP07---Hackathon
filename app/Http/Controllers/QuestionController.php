@@ -9,13 +9,17 @@ class QuestionController extends Controller
 {
     public function index()
     {
-        return view('question');
+        return view('index.welcome');
     }
 
     public function showInput()
     {
         $numberInput = $_GET['number'];
         return view('question.question', compact('numberInput'));
+    }
+
+    public function addQuantity(){
+        return view('question');
     }
 
     public function createQuestion(Request $request, $id)
@@ -27,13 +31,20 @@ class QuestionController extends Controller
             $question->save();
         }
 
-        return redirect(route('showQuestion', $id));
+        return redirect()->route('showQuestion', $id);
 
     }
 
     public function showQuestion()
     {
         $questions = QuestionModel::inRandomOrder()->take(1)->get();
-        return view('index.welcome', compact('questions'));
+        return view('question.box', compact('questions'));
+    }
+
+    public function done($id)
+    {
+        $question = QuestionModel::where('id', $id)->delete();
+        $questions = QuestionModel::inRandomOrder()->take(1)->get();
+        return view('question.box', compact('questions'));
     }
 }

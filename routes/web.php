@@ -18,13 +18,15 @@ Route::get('/', function () {
 
 Route::get('/create','TestController@create');
 
-Route::get('/question','TestController@question');
+Route::get('/quantity','QuestionController@addQuantity')->name('addquantity');
 
 
-Route::get('/', 'QuestionController@index');
+Route::get('/', 'QuestionController@index')->name('index');
 
 Route::get('/show-input', 'QuestionController@showInput')->name('showInput');
 
 Route::get('/show-question/{id}', 'QuestionController@showQuestion')->name('showQuestion');
 
 Route::post('/create-question/{id}', 'QuestionController@createQuestion')->name('createQuestion');
+
+Route::get('/done/{id}', 'QuestionController@done')->name('done');
