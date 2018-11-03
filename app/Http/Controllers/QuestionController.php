@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Model\QuestionModel;
 use Illuminate\Http\Request;
 
 class QuestionController extends Controller
@@ -20,7 +21,10 @@ class QuestionController extends Controller
     public function createQuestion(Request $request, $id)
     {
         for ($i = 1; $i <= $id; $i++) {
-            echo ($request->name$i);
+            $name = "name".$i;
+            $question = new QuestionModel();
+            $question->question = $request->$name;
+            $question->save();
         }
 
     }
