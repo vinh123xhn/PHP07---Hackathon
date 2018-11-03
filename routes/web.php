@@ -11,6 +11,16 @@
 |
 */
 
+
+Route::get('/', function () {
+  return view('welcome');
+});
+
+Route::get('/create','TestController@create');
+
+Route::get('/question','TestController@question');
+
+
 Route::get('/', 'QuestionController@index');
 
 Route::get('/show-input', 'QuestionController@showInput')->name('showInput');
