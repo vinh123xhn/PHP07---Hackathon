@@ -27,5 +27,20 @@ class QuestionController extends Controller
             $question->save();
         }
 
+        return redirect(route('showQuestion', $id));
+
+    }
+
+    public function showQuestion($id) {
+        $array = [];
+        $questions = QuestionModel::all();
+        foreach ($questions as $key => $question) {
+            $array[$key] = $question->question;
+        }
+        $countArray = count(array_rand($array, $id));
+
+        for ($i = 0; $i <= $countArray; $i++) {
+            echo $array[$i];
+        }
     }
 }
