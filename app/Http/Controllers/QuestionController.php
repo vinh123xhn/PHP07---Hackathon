@@ -15,7 +15,7 @@ class QuestionController extends Controller
     public function showInput()
     {
         $numberInput = $_GET['number'];
-        return view('showInput', compact('numberInput'));
+        return view('question.question', compact('numberInput'));
     }
 
     public function createQuestion(Request $request, $id)
