@@ -1045,7 +1045,7 @@
                             @csrf
                             @for($i = 1; $i <= $numberInput; $i++)
                                 <div class="col-12 input-margin" style="width: 100%; height: 100px; border: 2px solid black; border-radius: 5px">
-                                    <label style="margin-left: 45px">{{$i}}.</label><input type="text" name="input{{$i}}" style="border: none; border-bottom: 1px solid #606f7b; margin-top: 30px; margin-left: 5px; width: 80%">
+                                    <label style="margin-left: 45px">{{$i}}.</label><input type="text" name="name{{$i}}" style="border: none; border-bottom: 1px solid #606f7b; margin-top: 30px; margin-left: 5px; width: 80%">
                                 </div>
                             @endfor
                                 <input type="submit" style="height: 50px; width: 100px" value="Submit">
