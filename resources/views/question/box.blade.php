@@ -1,5 +1,5 @@
 {{--@include('question')--}}
-<!DOCTYPE html>
+        <!DOCTYPE html>
 
 <html lang="vi" class="mac webkit chrome cursor">
 
@@ -1032,7 +1032,7 @@
                             <div class="UIContainer">
                                 <div class="CreateSetHeader-headingText">
                                     <div class="CreateSetHeader-heading">
-                                        <div class="CreateSetHeader-title">Tạo nhiệm vụ mới</div>
+                                        <div class="CreateSetHeader-title">Nhiệm vụ của bạn là: </div>
                                     </div>
                                 </div>
                             </div>
@@ -1041,16 +1041,12 @@
                 </div>
                 <div class="CreateSetPage-container" style="background-color:#fff">
                     <div class="UIContainer">
-                        <form method="post" action="{{ route('createQuestion', $numberInput) }}">
-                            @csrf
-                            @for($i = 1; $i <= $numberInput; $i++)
-                                <div class="col-12 input-margin" style="width: 100%; height: 100px; border: 2px solid black; border-radius: 5px">
-                                    <label style="margin-left: 45px">{{$i}}.</label><input type="text" name="name{{$i}}" style="border: none; border-bottom: 1px solid #606f7b; margin-top: 30px; margin-left: 5px; width: 80%">
-                                </div>
-                            @endfor
-                                <input type="submit" style="height: 50px; width: 100px" value="Submit">
 
-                        </form>
+                            @foreach($questions as $question)
+                                <h4 style="margin-bottom: 20px">{{ $question->question }}</h4>
+                            <a href="{{ route('done',$question->id)  }}" type="button" value="Done" style="height: 40px; width: 60px">Done</a>
+                            @endforeach
+
                     </div>
                 </div>
             </div>
