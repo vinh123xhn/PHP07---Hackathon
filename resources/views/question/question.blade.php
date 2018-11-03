@@ -1032,7 +1032,7 @@
                             <div class="UIContainer">
                                 <div class="CreateSetHeader-headingText">
                                     <div class="CreateSetHeader-heading">
-                                        <div class="CreateSetHeader-title">Tạo câu hỏi mới</div>
+                                        <div class="CreateSetHeader-title">Tạo nhiệm vụ mới</div>
                                     </div>
                                 </div>
                             </div>
