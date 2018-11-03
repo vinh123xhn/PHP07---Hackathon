@@ -11,6 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'QuestionController@index');
+
+Route::get('/show-input', 'QuestionController@showInput')->name('showInput');
+
+Route::post('/create-question/{id}', 'QuestionController@createQuestion')->name('createQuestion');
