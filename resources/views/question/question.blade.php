@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 
 <html lang="vi" class="mac webkit chrome cursor">
-
 <head>
     <title>Tạo học phần mới | Quizlet</title>
     <link as="font" crossorigin="anonymous" href="https://quizlet.com/a/i/fonts/latin-basic/hurmegeosans-no2-400.J8Wu.woff2" rel="preload" type="font/woff2">
@@ -17,7 +16,6 @@
     <meta name="description" content="Tạo thẻ flash trực tuyến giúp cho việc học trở nên nhanh chóng và vui thú!">
     <link rel="canonical" href="https://quizlet.com/335847325/autosaved">
     <meta name="referrer" content="origin-when-cross-origin">
-
     <script>
         var _rollbarConfig = {
             "accessToken": "27dcc4189dcf44d98247b58699a3e517",
@@ -762,13 +760,9 @@
     <script async href="https://quizlet.com/a/j/dist/leaflet.cf6f716965d760f.a.vi.js" defer integrity="sha512-m2j1nVr0VWnFuMb2dq/nkinJEKPzhpoe9rIlq3DdyMxrWinupQzkwe2PXKoPkeFBEIFVTK7ix8KEIFlQ/iq9LA=="></script>
     <script async href="https://quizlet.com/a/j/dist/quizlet_shared_kotlin.d6cd9d5fff904ca.a.vi.js" defer integrity="sha512-4t9ylHFXT/j7CsCvzxyKEv0jMpvxRNdiw4Oouk1eH/pI886LJRaQ7806zRP8sBMH69omKTbihy6n7sJbkVfsDA=="></script>
 </head>
-
 <body class="sets edit create-set has-no-footer qad-is-showing" itemscope itemtype="http://schema.org/WebPage">
-
 <div class="ads ad adsbox doubleclick ad-placement carbon-ads __isAdBlockerEnabled" style="position: absolute; width: 10px; height: 10px; left: -100px; top: -100px;">&nbsp;</div>
-
 <div class="site">
-
     <script>
         window.Quizlet["coreData"] = {
             "acknowledgedOnboardingSteps": {},
@@ -1376,7 +1370,6 @@
         })();
     </script>
     <script async defer src="https://www.googletagmanager.com/gtm.js?id=GTM-5GTSWTM"></script>
-
     <script async defer src="https://secure.quantserve.com/quant.js"></script>
     <script async defer src="https://sb.scorecardresearch.com/beacon.js"></script>
     <noscript><img src="https://sb.scorecardresearch.com/p?c1=2&amp;c2=8641686&amp;cv=2.0&amp;cj=1" alt=""></noscript>
