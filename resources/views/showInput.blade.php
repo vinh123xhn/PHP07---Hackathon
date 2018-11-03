@@ -1,5 +1,5 @@
-@include('question')
-<form method="post" action="{{ route('createQuestion', $numberInput) }}">
+
+<form method="post" action="{{ route('createQuestion', $i) }}">
     {{ csrf_field() }}
     @for($i = 1; $i <= $numberInput; $i++)
         <input type="text" name="name{{ $i }}">

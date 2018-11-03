@@ -1,3 +1,4 @@
+{{--@include('question')--}}
 <!DOCTYPE html>
 
 <html lang="vi" class="mac webkit chrome cursor">
@@ -16,6 +17,13 @@
     <meta name="description" content="Tạo thẻ flash trực tuyến giúp cho việc học trở nên nhanh chóng và vui thú!">
     <link rel="canonical" href="https://quizlet.com/335847325/autosaved">
     <meta name="referrer" content="origin-when-cross-origin">
+
+    <style>
+        .input-margin{
+            margin-bottom: 50px;
+        }
+    </style>
+
     <script>
         var _rollbarConfig = {
             "accessToken": "27dcc4189dcf44d98247b58699a3e517",
@@ -1020,355 +1028,33 @@
                             <div class="UIContainer">
                                 <div class="CreateSetHeader-headingText">
                                     <div class="CreateSetHeader-heading">
-                                        <div class="CreateSetHeader-title">Tạo học phần mới</div>
+                                        <div class="CreateSetHeader-title">Tạo câu hỏi mới</div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="UIContainer">
-                        <p class="UIParagraph">
-                            <br>
-                            <br>
-                        </p>
-                        <div class="UIDiv CreateSetHeader-permissionsAndImport"> </div>
                     </div>
                 </div>
-                <div class="CreateSetPage-container">
+                <div class="CreateSetPage-container" style="background-color:#fff">
                     <div class="UIContainer">
-                        <div class="CreateSetPage-languageBar">
-                            <div class="LanguageBar">
-                                <div class="LanguageBar-side"> </div>
-                            </div>
-                        </div>
-                        <div class="CreateSetPage-list">
-                            <div class="TermRows">
-                                <div class="TermRows-termRowWrap">
-                                    <div class="TermRow">
-                                        <div class="TermContent">
-                                            <div class="TermContent-inner">
-                                                <div class="TermContent-sides">
-                                                    <div class="TermContent-sideWrap"></div>
-                                                </div>
-                                                <div class="ContextToggleGroup ContextToggleGroup--mobile"></div><span class="TermContent-counter"></span></div>
-                                        </div>
-                                    </div>
+                        <form method="post" action="{{ route('createQuestion', $numberInput) }}">
+                            @csrf
+                            @for($i = 1; $i <= $numberInput; $i++)
+                                <div class="col-12 input-margin" style="width: 100%; height: 100px; border: 2px solid black; border-radius: 5px">
+                                    <label style="margin-left: 45px">{{$i}}.</label><input type="text" name="name{{$i}}" style="border: none; border-bottom: 1px solid #606f7b; margin-top: 30px; margin-left: 5px; width: 80%">
                                 </div>
-                                <div class="TermRowSeparator"></div>
-                                <div class="TermRows-termRowWrap">
-                                    <div class="TermRow">
-                                        <div class="TermContent">
-                                            <div class="TermContent-inner">
-                                                <div class="TermContent-sides">
-                                                    <div class="TermContent-sideWrap"></div>
-                                                </div>
-                                                <div class="ContextToggleGroup ContextToggleGroup--mobile"></div><span class="TermContent-counter"></span></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="TermRowSeparator"></div>
-                                <div class="TermRows-termRowWrap">
-                                    <div class="TermRow">
-                                        <div class="TermContent">
-                                            <div class="TermContent-inner">
-                                                <div class="TermContent-sides">
-                                                    <div class="TermContent-sideWrap"></div>
-                                                </div>
-                                                <div class="ContextToggleGroup ContextToggleGroup--mobile"></div><span class="TermContent-counter"></span></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="TermRowSeparator"></div>
-                                <div class="TermRows-termRowWrap">
-                                    <div class="TermRow">
-                                        <div class="TermContent">
-                                            <div class="TermContent-inner">
-                                                <div class="TermContent-sides">
-                                                    <div class="TermContent-sideWrap"></div>
-                                                </div>
-                                                <div class="ContextToggleGroup ContextToggleGroup--mobile"></div><span class="TermContent-counter"></span></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="TermRowSeparator"></div>
-                                <div class="TermRows-termRowWrap">
-                                    <div class="TermRow">
-                                        <div class="TermContent">
-                                            <div class="TermContent-inner">
-                                                <div class="TermContent-sides">
-                                                    <div class="TermContent-sideWrap"></div>
-                                                </div>
-                                                <div class="ContextToggleGroup ContextToggleGroup--mobile"></div><span class="TermContent-counter"></span></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="TermRowSeparator"></div>
-                                <div class="TermRows-termRowWrap">
-                                    <div class="TermRow">
-                                        <div class="TermContent">
-                                            <div class="TermContent-inner">
-                                                <div class="TermContent-sides">
-                                                    <div class="TermContent-sideWrap"></div>
-                                                </div>
-                                                <div class="ContextToggleGroup ContextToggleGroup--mobile"></div><span class="TermContent-counter"></span></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="TermRowSeparator"></div>
-                                <div class="TermRow is-phantom">
-                                    <div class="TermContent">
-                                        <div class="TermContent-inner">
-                                            <div class="TermContent-sides">
-                                                <div class="TermContent-sideWrap"></div>
-                                            </div>
-                                            <div class="ContextToggleGroup ContextToggleGroup--mobile"></div><span class="TermContent-counter"></span></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                            @endfor
+                                <input type="submit" style="height: 50px; width: 100px" value="Submit">
+
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
         <script>
-            window.createSetData = {
-                "classes": [],
-                "classSets": [],
-                "definitionCustomAudios": [],
-                "diagramImage": null,
-                "diagramImageRef": null,
-                "diagramShapes": null,
-                "images": [],
-                "isDiagramSet": true,
-                "maxAllowedDiagramShapeCount": 8,
-                "misc": {
-                    "canEditPermissions": true,
-                    "canUseCreateSetDiagramsGallery": false,
-                    "canUseCreateSetDiagramsOcr": false,
-                    "canUseDiagramUpload": true,
-                    "canUseImageUpload": false,
-                    "canUsePremiumDiagramFeatures": false,
-                    "canUseVoiceRecording": false,
-                    "classToAddTo": null,
-                    "folderToAddTo": null,
-                    "hasCreatedSets": false,
-                    "hideAutosavePrompt": false,
-                    "isConfirmed": true,
-                    "isIOS": false,
-                    "isMac": true,
-                    "isUnderAge": false,
-                    "isUnder18": false,
-                    "recentLanguages": ["en", "es"],
-                    "shouldSeeDiagramBlurTooltip": true,
-                    "shouldShowAd": true,
-                    "supportsStickyHeader": true,
-                    "voiceRecordingConfig": {
-                        "webSocketUrl": "wss:\/\/quizlet.com\/voice-recorder",
-                        "ajaxChunkUrl": "https:\/\/quizlet.com\/custom-audio\/upload-pcm-chunk",
-                        "ajaxFinishedUrl": "https:\/\/quizlet.com\/custom-audio\/finish-chunked-pcm",
-                        "connectionPrimingUrl": "https:\/\/s3-us-west-1.amazonaws.com\/voice.quizlet.com\/favicon.ico",
-                        "swfPath": "\/a\/i\/FlashRecorder.dG4p.swf",
-                        "qecookies": "VXOO5rVgkKBb1Zvhd88VnCo809XFE3b-WWcw0NZoVe9xrv4Emkxjcemm8-9rzayrCQEi-g87m-MERXELulYDo3APIHU7cYKyotLychGglvJrmOcQFMvNzSGVr9R0yiWlncBdyB.2RQfB5dNBCHGlkTmRo96m.zNkZd7r.tcyzqA",
-                        "canRecord": false
-                    },
-                    "voiceRecordingUpsellImage": "\/a\/i\/info\/voice_graphic.QpgG.png"
-                },
-                "set": {
-                    "id": 335847325,
-                    "timestamp": 1541215111,
-                    "lastModified": 1541215315,
-                    "publishedTimestamp": 0,
-                    "creatorId": 103850334,
-                    "wordLang": null,
-                    "defLang": "en",
-                    "title": "game",
-                    "passwordUse": false,
-                    "passwordEdit": false,
-                    "accessType": 2,
-                    "accessCodePrefix": null,
-                    "description": "",
-                    "numTerms": 6,
-                    "hasImages": false,
-                    "parentId": 0,
-                    "creationSource": 1,
-                    "privacyLockStatus": 0,
-                    "hasDiagrams": false,
-                    "_webUrl": "https:\/\/quizlet.com\/335847325\/autosaved",
-                    "_thumbnailUrl": null,
-                    "price": null
-                },
-                "shouldShowAutosuggest": true,
-                "signupOrigin": "create-set-modal",
-                "termCustomAudios": [],
-                "termImages": [],
-                "terms": [{
-                    "id": 11472616425,
-                    "word": "ver",
-                    "_wordTtsUrl": "\/tts\/en.mp3?v=14&b=dmVy&s=ITAOCRju",
-                    "_wordSlowTtsUrl": "\/tts\/en.mp3?v=14&b=dmVy&s=ITAOCRju&speed=70",
-                    "_wordAudioUrl": "\/tts\/en.mp3?v=14&b=dmVy&s=ITAOCRju",
-                    "definition": "to see",
-                    "_definitionTtsUrl": "\/tts\/en.mp3?v=14&b=dG8gc2Vl&s=HyS---s-",
-                    "_definitionSlowTtsUrl": "\/tts\/en.mp3?v=14&b=dG8gc2Vl&s=HyS---s-",
-                    "_definitionAudioUrl": "\/tts\/en.mp3?v=14&b=dG8gc2Vl&s=HyS---s-",
-                    "_imageUrl": null,
-                    "setId": 335847325,
-                    "rank": 0,
-                    "lastModified": 1541215121,
-                    "wordCustomAudioId": null,
-                    "definitionCustomAudioId": null,
-                    "definitionImageId": null
-                }, {
-                    "id": 11472616426,
-                    "word": "ver",
-                    "_wordTtsUrl": "\/tts\/en.mp3?v=14&b=dmVy&s=ITAOCRju",
-                    "_wordSlowTtsUrl": "\/tts\/en.mp3?v=14&b=dmVy&s=ITAOCRju&speed=70",
-                    "_wordAudioUrl": "\/tts\/en.mp3?v=14&b=dmVy&s=ITAOCRju",
-                    "definition": "view",
-                    "_definitionTtsUrl": "\/tts\/en.mp3?v=14&b=dmlldw&s=wWo6JxdG",
-                    "_definitionSlowTtsUrl": "\/tts\/en.mp3?v=14&b=dmlldw&s=wWo6JxdG",
-                    "_definitionAudioUrl": "\/tts\/en.mp3?v=14&b=dmlldw&s=wWo6JxdG",
-                    "_imageUrl": null,
-                    "setId": 335847325,
-                    "rank": 1,
-                    "lastModified": 1541215121,
-                    "wordCustomAudioId": null,
-                    "definitionCustomAudioId": null,
-                    "definitionImageId": null
-                }, {
-                    "id": 11472616427,
-                    "word": "ver",
-                    "_wordTtsUrl": "\/tts\/en.mp3?v=14&b=dmVy&s=ITAOCRju",
-                    "_wordSlowTtsUrl": "\/tts\/en.mp3?v=14&b=dmVy&s=ITAOCRju&speed=70",
-                    "_wordAudioUrl": "\/tts\/en.mp3?v=14&b=dmVy&s=ITAOCRju",
-                    "definition": "to see",
-                    "_definitionTtsUrl": "\/tts\/en.mp3?v=14&b=dG8gc2Vl&s=HyS---s-",
-                    "_definitionSlowTtsUrl": "\/tts\/en.mp3?v=14&b=dG8gc2Vl&s=HyS---s-",
-                    "_definitionAudioUrl": "\/tts\/en.mp3?v=14&b=dG8gc2Vl&s=HyS---s-",
-                    "_imageUrl": null,
-                    "setId": 335847325,
-                    "rank": 2,
-                    "lastModified": 1541215128,
-                    "wordCustomAudioId": null,
-                    "definitionCustomAudioId": null,
-                    "definitionImageId": null
-                }, {
-                    "id": 11472617129,
-                    "word": "venir",
-                    "_wordTtsUrl": "\/tts\/en.mp3?v=14&b=dmVuaXI&s=rEWrnp8d",
-                    "_wordSlowTtsUrl": "\/tts\/en.mp3?v=14&b=dmVuaXI&s=rEWrnp8d&speed=70",
-                    "_wordAudioUrl": "\/tts\/en.mp3?v=14&b=dmVuaXI&s=rEWrnp8d",
-                    "definition": "v. to come",
-                    "_definitionTtsUrl": "\/tts\/en.mp3?v=14&b=di4gdG8gY29tZQ&s=U29DTPJN",
-                    "_definitionSlowTtsUrl": "\/tts\/en.mp3?v=14&b=di4gdG8gY29tZQ&s=U29DTPJN",
-                    "_definitionAudioUrl": "\/tts\/en.mp3?v=14&b=di4gdG8gY29tZQ&s=U29DTPJN",
-                    "_imageUrl": null,
-                    "setId": 335847325,
-                    "rank": 3,
-                    "lastModified": 1541215128,
-                    "wordCustomAudioId": null,
-                    "definitionCustomAudioId": null,
-                    "definitionImageId": null
-                }, {
-                    "id": 11472617130,
-                    "word": "ver",
-                    "_wordTtsUrl": "\/tts\/en.mp3?v=14&b=dmVy&s=ITAOCRju",
-                    "_wordSlowTtsUrl": "\/tts\/en.mp3?v=14&b=dmVy&s=ITAOCRju&speed=70",
-                    "_wordAudioUrl": "\/tts\/en.mp3?v=14&b=dmVy&s=ITAOCRju",
-                    "definition": "to see",
-                    "_definitionTtsUrl": "\/tts\/en.mp3?v=14&b=dG8gc2Vl&s=HyS---s-",
-                    "_definitionSlowTtsUrl": "\/tts\/en.mp3?v=14&b=dG8gc2Vl&s=HyS---s-",
-                    "_definitionAudioUrl": "\/tts\/en.mp3?v=14&b=dG8gc2Vl&s=HyS---s-",
-                    "_imageUrl": null,
-                    "setId": 335847325,
-                    "rank": 4,
-                    "lastModified": 1541215128,
-                    "wordCustomAudioId": null,
-                    "definitionCustomAudioId": null,
-                    "definitionImageId": null
-                }, {
-                    "id": 11472618363,
-                    "word": "\u00e1dasdasd",
-                    "_wordTtsUrl": "\/tts\/en.mp3?v=14&b=w6FkYXNkYXNk&s=H6.2lyMy",
-                    "_wordSlowTtsUrl": "\/tts\/en.mp3?v=14&b=w6FkYXNkYXNk&s=H6.2lyMy&speed=70",
-                    "_wordAudioUrl": "\/tts\/en.mp3?v=14&b=w6FkYXNkYXNk&s=H6.2lyMy",
-                    "definition": "",
-                    "_definitionTtsUrl": null,
-                    "_definitionSlowTtsUrl": null,
-                    "_definitionAudioUrl": null,
-                    "_imageUrl": null,
-                    "setId": 335847325,
-                    "rank": 5,
-                    "lastModified": 1541215146,
-                    "wordCustomAudioId": null,
-                    "definitionCustomAudioId": null,
-                    "definitionImageId": null
-                }],
-                "user": {
-                    "id": 103850334,
-                    "username": "quizlette56570074",
-                    "timestamp": 1541215066,
-                    "lastModified": 1541218489,
-                    "type": 0,
-                    "isLocked": false,
-                    "_imageUrl": "https:\/\/quizlet.com\/fb-pic\/platform-lookaside.fbsbx.com\/platform\/profilepic\/?asid=2151716558489602&height=320&width=320&ext=1543810490&hash=AeQ-038hvQ8J0ywy",
-                    "timeZone": "Asia\/Ho_Chi_Minh",
-                    "birthYear": 1998,
-                    "birthMonth": 11,
-                    "birthDay": 14,
-                    "isConfirmed": true,
-                    "selfIdentifiedTeacherStatus": 0,
-                    "profileImageId": 2,
-                    "email": "hoangkhai1411111998@gmail.com",
-                    "_hasPassword": false,
-                    "_hasFacebook": true,
-                    "_hasGoogle": false,
-                    "_canChangeUsername": true,
-                    "_isUnderAge": false,
-                    "_isUnderAgeForAds": false,
-                    "_isUnderAgeOrInCoppaTransition": false,
-                    "_needsChildDirectedTreatment": false,
-                    "webLocale": "vi-vn",
-                    "mobileLocale": null,
-                    "userLocalePreference": "vi",
-                    "srsNotificationTime": 28800,
-                    "srsEmailNotificationsEnabled": false,
-                    "srsPushNotificationsEnabled": false,
-                    "firstName": "Nguy\u1ec5n",
-                    "lastName": "\u0110\u00ecnh Kh\u1ea3i"
-                },
-                "voiceRecordingUpsellImage": null,
-                "wordCustomAudios": []
-            };
             QLoad('Quizlet.CreateSetData');
         </script>
     </main>
-    <script>
-        (function() {
-            var analyticsData = {
-                "studyableTitle": "game",
-                "studyableId": 335847325,
-                "studyableType": "set",
-                "hasDiagrams": false,
-                "locale": "vi",
-                "abTests": "RemoveJSPageLoad:control,SetPagePremiumSetRecommendations:control,TMTSetPageAdTestLoggedIn_20180913:control,SetPageBranchIoAppBanner_20180822:experiment",
-                "loginSource": "facebook",
-                "isLoggedIn": true,
-                "selfIdentifiedUserType": "unknown",
-                "userUpgradeType": "free",
-                "isVerifiedCreator": false,
-                "uid": "-3395576602222604931",
-                "userId": 103850334,
-                "siteVersion": 12694
-            };
-            analyticsData.path = Quizlet.actionString;
-            analyticsData.event = 'dataLayer-initialized';
-            window.dataLayer = [analyticsData, {
-                'gtm.start': Date.now(),
-                event: 'gtm.js'
-            }];
-        })();
-    </script>
     <script async defer src="https://www.googletagmanager.com/gtm.js?id=GTM-5GTSWTM"></script>
     <script async defer src="https://secure.quantserve.com/quant.js"></script>
     <script async defer src="https://sb.scorecardresearch.com/beacon.js"></script>
