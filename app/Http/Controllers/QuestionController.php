@@ -21,7 +21,7 @@ class QuestionController extends Controller
     public function createQuestion(Request $request, $id)
     {
         for ($i = 1; $i <= $id; $i++) {
-            $name = "name".$i;
+            $name = "name" . $i;
             $question = new QuestionModel();
             $question->question = $request->$name;
             $question->save();
@@ -31,16 +31,17 @@ class QuestionController extends Controller
 
     }
 
-    public function showQuestion($id) {
+    public function showQuestion($id)
+    {
         $array = [];
         $questions = QuestionModel::all();
         foreach ($questions as $key => $question) {
             $array[$key] = $question->question;
         }
-        $countArray = count(array_rand($array, $id));
 
-        for ($i = 0; $i <= $countArray; $i++) {
-            echo $array[$i];
+        $rand_keys = array_rand($array, $id);
+        for ($i = 0; $i < $id; $i++) {
+            echo $array[$rand_keys[$i]] . "\n";
         }
     }
 }
