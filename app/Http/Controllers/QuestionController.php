@@ -31,17 +31,9 @@ class QuestionController extends Controller
 
     }
 
-    public function showQuestion($id)
+    public function showQuestion()
     {
-        $array = [];
-        $questions = QuestionModel::all();
-        foreach ($questions as $key => $question) {
-            $array[$key] = $question->question;
-        }
-
-        $rand_keys = array_rand($array, $id);
-        for ($i = 0; $i < $id; $i++) {
-            echo $array[$rand_keys[$i]] . "\n";
-        }
+        $questions = QuestionModel::inRandomOrder()->take(1)->get();
+        return view('index.welcome', compact('questions'));
     }
 }
